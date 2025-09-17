@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VSN — Rebel Scribble Skin</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinh Ngo | Multitalented Performer</title>
@@ -39,94 +36,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vinh Ngo | Original Energy</title>
-<script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<style>
-    /* --- Rebel skin core --- */
-    :root{
-      --ink:#ff2f92; /* hot pink ink */
-      --ink-2:#00e0ff; /* cyan ink */
-      --ink-3:#8dff00; /* slime green */
-      --paper:#fff0f6; /* tinted paper */
-    }
-    html,body{height:100%}
-
-    /* Textures */
-    .paper{
-      background: var(--paper);
-      background-image:
-        radial-gradient( rgba(0,0,0,.06) 1px, transparent 1px ),
-        radial-gradient( rgba(0,0,0,.035) 1px, transparent 1px ),
-        linear-gradient( rgba(255,255,255,.8), rgba(255,255,255,.8) );
-      background-size: 12px 12px, 20px 20px, auto;
-      background-position: 0 0, 6px 6px, 0 0;
-    }
-
-    /* Handwritten vibe */
-    @font-face{
-      font-family:"YearbookMarker";
-      src: local("Comic Sans MS"), local("Marker Felt"); /* fallback; swap to your own font */
-    }
-    .marker{font-family:"YearbookMarker", system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
-
-    /* Graffiti strokes */
-    .stroke-ink{stroke:var(--ink);}
-    .stroke-ink-2{stroke:var(--ink-2);}
-    .stroke-ink-3{stroke:var(--ink-3);}
-
-    /* Blend tricks */
-    .blend-diff{mix-blend-mode:difference}
-    .blend-hard{mix-blend-mode:hard-light}
-    .blend-screen{mix-blend-mode:screen}
-
-    /* Sticker notes */
-    .note{
-      transform: rotate(-2.5deg);
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,.25));
-      background: #fff6a6;
-      border: 2px solid #111827;
-    }
-
-    /* Canvas pen cursor */
-    .pen { cursor: crosshair; }
-
-    /* Toggle button styling */
-    .glow {
-      box-shadow: 0 0 0px rgba(255,255,255,0.0), 0 0 25px rgba(255,47,146,.35);
-      transition: box-shadow .2s ease;
-    }
-    .glow:hover { box-shadow: 0 0 45px rgba(255,47,146,.55); }
-
-    /* Headline treatment */
-    .title-outline{
-      -webkit-text-stroke: 2px #111827;
-      color: transparent;
-      text-shadow: 4px 4px 0 var(--ink-2), -2px -2px 0 var(--ink);
-      letter-spacing: .5px;
-    }
-
-    /* Mobile tweaks */
-    @media (max-width: 768px){
-      .title-outline{ -webkit-text-stroke: 1.5px #111827; text-shadow: 3px 3px 0 var(--ink-2), -1.5px -1.5px 0 var(--ink); }
-    }
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
     body {font-family:'Montserrat',sans-serif;}
     .hero-gradient{background:linear-gradient(135deg,#1e3a8a 0%,#000 100%)}
     .text-gradient{background:linear-gradient(90deg,#f59e0b,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
     .social-icon:hover{transform:translateY(-3px);transition:all .3s ease}
     .talent-card:hover{transform:translateY(-10px);box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);transition:all .3s ease}
-</style>
+  </style>
 </head>
-<body class="paper min-h-screen text-gray-900">
-  <!-- Toggle: enable/disable Rebel overlay on any page -->
-  <div class="fixed z-[60] top-4 right-4 flex gap-2">
-    <button id="toggleOverlay" class="glow marker uppercase tracking-wide bg-black text-white px-4 py-2 rounded-full text-sm">Rebel Layer</button>
-    <button id="clearInk" class="marker bg-white border border-gray-900 px-4 py-2 rounded-full text-sm">Clear Ink</button>
-  </div>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
@@ -162,27 +85,6 @@
 </div>
     </nav>
 
-  <!-- Hero example (drop this treatment into your existing hero) -->
-  <section class="relative overflow-hidden">
-    <!-- Graffiti background svg -->
-    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 600" fill="none">
-      <g opacity="0.55" class="blend-screen">
-        <path class="stroke-ink" d="M50 120 Q 200 20, 380 160 T 760 160 1120 120" stroke-width="18" stroke-linecap="round"/>
-        <path class="stroke-ink-2" d="M90 260 C 200 280, 380 220, 520 300 S 900 420, 1120 320" stroke-width="14" stroke-linecap="round"/>
-        <path class="stroke-ink-3" d="M120 420 C 260 360, 420 520, 600 420 S 980 280, 1140 460" stroke-width="10" stroke-linecap="round"/>
-      </g>
-      <!-- X marks / bombs vibe -->
-      <g opacity="0.35" class="blend-hard">
-        <g transform="translate(140,90) rotate(-15)">
-          <line x1="-20" y1="0" x2="20" y2="0" stroke="black" stroke-width="10"/>
-          <line x1="0" y1="-20" x2="0" y2="20" stroke="black" stroke-width="10"/>
-        </g>
-        <g transform="translate(980,200) rotate(22)">
-          <line x1="-18" y1="0" x2="18" y2="0" stroke="black" stroke-width="8"/>
-          <line x1="0" y1="-18" x2="0" y2="18" stroke="black" stroke-width="8"/>
-        </g>
-      </g>
-    </svg>
     <!-- Hero Section -->
     <section id="home" class="hero-gradient pt-24 pb-20 md:pt-32 md:pb-28 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -214,15 +116,6 @@
 </div>
     </section>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-24 md:pt-36">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-          <h1 class="marker text-5xl md:text-7xl font-black leading-tight title-outline">I don’t fit boxes. I build stages.</h1>
-          <p class="mt-6 text-xl marker">Vietnamese‑Black actor • singer • dancer. Original stories. Original energy.</p>
-          <p class="mt-4 max-w-xl">I’m Vinh Si Ngo. I don’t perform to impress. I perform because it’s the truest thing I know how to do.</p>
-          <div class="mt-8 flex gap-4">
-            <a href="#contact" class="marker bg-black text-white px-6 py-3 rounded-full">Book Me</a>
-            <a href="#social" class="marker border border-black px-6 py-3 rounded-full bg-white">Watch Me Work</a>
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -346,17 +239,8 @@
           <div class="flex space-x-4">
             <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Book Me</a>
             <a href="#social" class="border border-white hover:bg-white hover:text-black text-white px-6 py-3 rounded-lg font-medium transition duration-300">Watch Me Work</a>
-</div>
-          <!-- sticky note callout -->
-          <div class="note inline-block mt-8 p-4 marker text-sm">FREE SPEECH ISN’T A TREND — IT’S A STAGE. <span class="text-[var(--ink)]">Say it. Own it.</span></div>
+          </div>
         </div>
-        <div class="relative" data-aos="fade-left">
-          <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1200" alt="VSN" class="rounded-2xl shadow-2xl rotate-1"/>
-          <!-- graffiti crown -->
-          <svg class="absolute -top-6 left-10 w-40 h-40 blend-diff" viewBox="0 0 200 200" fill="none">
-            <path class="stroke-ink" d="M20 130 L60 40 L100 130 L140 50 L180 130" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-</div>
         <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left">
           <div class="relative">
             <img src="http://static.photos/people/640x360/42" alt="Vinh Si Ngo" class="rounded-lg shadow-2xl w-full max-w-md">
@@ -366,80 +250,10 @@
           </div>
 </div>
     </section>
-</div>
-</div>
-</section>
+      </div>
+    </div>
+  </section>
 
-  <!-- Ink Canvas Overlay (draw over the page like a yearbook) -->
-  <canvas id="ink" class="fixed inset-0 z-[50] pen pointer-events-none" aria-hidden="true"></canvas>
-
-  <!-- Controls bar -->
-  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-3 bg-white/90 backdrop-blur border border-gray-900 rounded-full px-4 py-2">
-    <span class="marker text-sm">Ink</span>
-    <input id="color" type="color" value="#ff2f92" class="w-8 h-8 border border-gray-900 rounded-full"/>
-    <input id="size" type="range" min="4" max="36" value="16" class="w-40"/>
-    <button id="eraser" class="marker px-3 py-1 border border-gray-900 rounded-full">Eraser</button>
-    <button id="undo" class="marker px-3 py-1 border border-gray-900 rounded-full">Undo</button>
-    <button id="save" class="marker px-3 py-1 border border-gray-900 rounded-full">Save PNG</button>
-  </div>
-
-  <script>
-    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-
-    // --- Yearbook Ink Canvas ---
-    const c = document.getElementById('ink');
-    const ctx = c.getContext('2d');
-    let drawing = false, last = null, paths = [], current = [];
-
-    function fit(){ c.width = innerWidth; c.height = innerHeight; redraw(); }
-    addEventListener('resize', fit); fit();
-
-    const colorEl = document.getElementById('color');
-    const sizeEl  = document.getElementById('size');
-    const eraser  = document.getElementById('eraser');
-    const undoBtn = document.getElementById('undo');
-    const saveBtn = document.getElementById('save');
-
-    // High‑contrast ink effect
-    function strokeStyle(p){
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      ctx.lineWidth = p.size;
-      ctx.globalCompositeOperation = p.erase ? 'destination-out' : 'source-over';
-      ctx.strokeStyle = p.erase ? 'rgba(0,0,0,1)' : p.color;
-    }
-
-    function redraw(){
-      ctx.clearRect(0,0,c.width,c.height);
-      for(const p of paths){
-        strokeStyle(p);
-        ctx.beginPath();
-        ctx.moveTo(p.points[0].x, p.points[0].y);
-        for(const pt of p.points.slice(1)) ctx.lineTo(pt.x, pt.y);
-        ctx.stroke();
-      }
-    }
-
-    function start(x,y){ drawing = true; current = [{x,y}]; last = {x,y}; }
-    function move(x,y){ if(!drawing) return; current.push({x,y}); drawLive(); }
-    function end(){ if(!drawing) return; drawing = false; paths.push({ points: current, color: colorEl.value, size: +sizeEl.value, erase: eraser.classList.contains('active')}); current=[]; }
-
-    function drawLive(){
-      const p = { points: [last, ...current.slice(-1)], color: colorEl.value, size: +sizeEl.value, erase: eraser.classList.contains('active') };
-      strokeStyle(p);
-      ctx.beginPath();
-      ctx.moveTo(p.points[0].x, p.points[0].y);
-      ctx.lineTo(p.points[1].x, p.points[1].y);
-      ctx.stroke();
-      last = current[current.length-1];
-    }
-
-    // Pointer events
-    function pos(e){
-      const t = e.touches ? e.touches[0] : e;
-      const rect = c.getBoundingClientRect();
-      return { x: t.clientX - rect.left, y: t.clientY - rect.top };
-    }
     <!-- Social Media Section -->
     <section id="social" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -541,9 +355,6 @@
     </div>
   </section>
 
-    c.addEventListener('pointerdown', e=>{ c.classList.add('pen'); c.style.pointerEvents='auto'; const p=pos(e); start(p.x,p.y); });
-    c.addEventListener('pointermove', e=>{ const p=pos(e); move(p.x,p.y); });
-    addEventListener('pointerup', end); addEventListener('pointercancel', end);
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -677,10 +488,6 @@
     </div>
   </section>
 
-    // Controls
-    eraser.addEventListener('click', ()=>{ eraser.classList.toggle('active'); eraser.textContent = eraser.classList.contains('active') ? 'Ink' : 'Eraser'; });
-    undoBtn.addEventListener('click', ()=>{ paths.pop(); redraw(); });
-    saveBtn.addEventListener('click', ()=>{ const a=document.createElement('a'); a.download='vsn-ink.png'; a.href=c.toDataURL('image/png'); a.click(); });
     <!-- Footer -->
     <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -721,15 +528,6 @@
     </div>
   </section>
 
-    // Overlay toggle
-    const toggle = document.getElementById('toggleOverlay');
-    toggle.addEventListener('click', ()=>{
-      const on = c.style.display !== 'none';
-      c.style.display = on ? 'none' : 'block';
-      document.querySelectorAll('.blend-diff,.blend-hard,.blend-screen').forEach(el=>{
-        el.style.display = on ? 'none' : 'block';
-      });
-    });
   <!-- Contact -->
   <section id="contact" class="py-20 bg-gray-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -744,8 +542,6 @@
     </div>
   </section>
 
-    // Start with overlay visible
-    c.style.display = 'block';
   <!-- Footer -->
   <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -761,8 +557,6 @@
     </div>
   </footer>
 
-    // Clear Ink
-    document.getElementById('clearInk').addEventListener('click', ()=>{ paths.length=0; redraw(); });
     <script>
         AOS.init({
             duration: 800,
@@ -774,7 +568,7 @@
   <script>
     AOS.init({duration:800,easing:'ease-in-out',once:true});
     feather.replace();
-</script>
+  </script>
 </body>
 </html>
  
